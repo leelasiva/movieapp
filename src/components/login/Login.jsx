@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../../../src/index.css';
+import './login.css';
 
 
 
@@ -26,10 +26,10 @@ const Login = (props) => {
 
         <div className='d-flex justify-content-center align-items-center  app'>
           
-            
+        <h1 className='mb-2 login'>Login</h1>
             <div className='overlayer'></div>
             <div>
-            <h1 className='mb-2 login'>Login</h1>
+            
                 <div className='container mb-5'>
                 
                     
@@ -50,7 +50,7 @@ const Login = (props) => {
                             <input
                                 type='submit'
                                 value='Login'
-                                className='form-control mt-3 btn btn-warning button h3'
+                                className='form-control mt-3 btn button h3'
                             />
                         </div>
                         <div className='input-group p-2'>

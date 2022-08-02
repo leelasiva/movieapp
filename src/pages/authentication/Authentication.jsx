@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { storeUserData } from '../../utils/userData';
 import { ROLES } from '../../constants/userRoles';
 
-const Authentication = (props) => {
+const Authentication = () => {
   const [showSignup,setShowSignUp] = useState(false);
   const [loginMessage,setLoginMessage] = useState("");
   const [errorMessageLogin,setErrorMessageLogin] = useState("");
@@ -41,7 +41,7 @@ const Authentication = (props) => {
        const {status,message,data} = res;
         if(status === 200){
           if(message){
-           setLoginMessage(message);
+            setErrorMessageLogin(message);
           }else{
               
               storeUserData(data);
@@ -64,7 +64,7 @@ const Authentication = (props) => {
        const {message,status} =res;
        if(status === 201){
         setShowSignUp(false);
-         setErrorMessageSignup("Signup Successful! please Login")
+        setLoginMessage("Signup Successful! please Login")
          }else if(message){
           setErrorMessageSignup(message);
          }

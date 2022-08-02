@@ -6,6 +6,7 @@ import Home from './pages/Landing/Home';
 import Customer from './pages/customer/Customer.jsx';
 import Client from './pages/client/Client.jsx';
 import Admin from './pages/admin/Admin.jsx'
+import LandingPage from './pages/Landing/LandingPage';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
 
     <Routes>
         <Route path='/' element={<Home />} />
+        <Route path="landingPage" element={<LandingPage/>}/>
         <Route path='/login' element={<Authentication />} />
         <Route path='/customer' element={<Customer />} />
         <Route path='/client' element={<Client />} />

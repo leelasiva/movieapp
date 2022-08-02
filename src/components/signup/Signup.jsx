@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { ROLES } from '../../constants/userRoles';
 import {Dropdown,DropdownButton} from 'react-bootstrap';
-import '../../../src/index.css';
+import './signup.css';
 
 const Signup = (props) => {
   const {onSignupSubmit, goToLogin,errorMessageSignup} = props;
@@ -69,7 +69,7 @@ const Signup = (props) => {
                       <input
                           type='submit'
                           value='Create'
-                          className='form-control m-1 btn btn-warning'
+                          className='form-control m-1 btn button'
                       />
                   </div>
                   <div className='input-group p-2'>
