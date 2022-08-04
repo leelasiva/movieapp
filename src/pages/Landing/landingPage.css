@@ -1,0 +1,15 @@
+.main-section{
+    min-height: 40vh;
+    padding: 20px;
+}
+
+.movie-tile{
+    margin: 40px;
+    cursor: pointer;
+   
+}
+
+.image-tile{
+    width: 200px;
+    height: 300px;
+}

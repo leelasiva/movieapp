@@ -8,7 +8,7 @@ const Header = (props) => {
 
   const [searchText,setSearchText] = useState("");
 
-  const { showSearch} = props
+  const { showSearch,filterMoviesBySearch} = props
 
   const navigate = useNavigate();
 
@@ -18,14 +18,15 @@ navigate("/login?referrer=home");
   };
 
   const isUserLoggedin = localStorage.getItem("accessToken")
-const loginFn =() =>{
+ 
+  const loginFn =() =>{
   navigate("/login");
 };
 
 const searchFn = (e) =>{
   console.log(searchText);
   e.preventDefault();
-  //filterMoviesBySearch(searchText);
+  filterMoviesBySearch(searchText);
 }
   return (
     <div className=' d-flex bg-dark p-2 justify-content-between'>

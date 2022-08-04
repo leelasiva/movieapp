@@ -1,18 +1,22 @@
 import React from 'react'
 import { CCarousel,CCarouselItem,CImage } from '@coreui/react'
+import './imageCarousel.css';
 
 const ImageCarousel = (props) => {
+   const {images} =props
   return (
     <div className='shadow-lg'>
        <CCarousel controls indicators>
       {
-        ImageCarousel.map((image,index)=>{
+        images.map((image,index)=>{
             return(
                 <CCarouselItem>
                 <CImage 
-                   className='d-block w-100'
+                   className='d-block image-fit'
                    src={image}
-                   alt={`slide ${index+1}`}/>
+                   alt={`slide ${index+1}`}
+                  
+                   />
                 </CCarouselItem>
             );
         })
