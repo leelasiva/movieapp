@@ -9,6 +9,7 @@ const TheatreEditModal = (props) => {
         handleEditTheatreSubmit,
         handleTheatresChange,
         errorMessage } = props;
+        
 
     return (
         <Modal

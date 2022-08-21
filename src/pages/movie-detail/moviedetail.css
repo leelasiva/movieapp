@@ -1,0 +1,17 @@
+
+.wrapperMD{
+     margin-left:20px;
+    height:100%;
+   
+}
+.movie-poster{
+    overflow: hidden;
+    height:380px;
+    width:270px;
+    align-items: center;
+}
+.movie-detail{
+    background: url("../../assets/authBg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

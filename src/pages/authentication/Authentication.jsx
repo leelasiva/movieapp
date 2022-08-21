@@ -17,7 +17,7 @@ const Authentication = () => {
 
   const redirectToPage= userType =>{
      if(userType === ROLES.CUSTOMER){
-      navigate("/customer");
+      navigate("/");
      }else  if(userType === ROLES.CLIENT){
       navigate("/client");
      }else{

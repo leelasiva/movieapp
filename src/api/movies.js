@@ -6,3 +6,26 @@ export const getAllMovies = async () => {
     const postUrl = `${BASE_URL}/mba/api/v1/movies`;
     return await axios.get(postUrl);
 };
+
+
+export const updateMovieDetails = async (movieId, movie) => {
+    const url = `${BASE_URL}/mba/api/v1/movies/${movieId}`;
+    return await axios.put(url, movie, {
+        headers: {
+            "x-access-token": localStorage.getItem("accessToken"),
+        },
+    });
+};
+
+export const removeMovie = async movieId => {
+    const url = `${BASE_URL}/mba/api/v1/movies/${movieId}`;
+    return await axios.delete(url, {
+        headers: {
+            "x-access-token": localStorage.getItem("accessToken"),
+        },
+    });
+};
+export const getMovieDetails = async movieId => {
+    const url = `${BASE_URL}/mba/api/v1/movies/${movieId}`;
+    return await axios.get(url);
+};

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { getAllTheatres, updateTheatre } from '../../api/theatres';
-import MaterialTable from "@material-table/core";
-import Edit from '@material-ui/icons/Edit';
-import Delete from '@material-ui/icons/Delete'
-import { ExportCsv, ExportPdf } from '@material-table/exporters';
+import MaterialTable from '@material-table/core';
+import {ExportCsv,ExportPdf} from '@material-table/exporters';
+import Edit from '@mui/icons-material/Edit';
+import Delete from '@material-ui/icons/Delete';
 import TheatreEditModal from '../theatre-edit-modal/TheatreEditModal';
 
 const TheatresList = () => {
@@ -85,73 +85,72 @@ const TheatresList = () => {
     }
 
     return (
-        <div className='m-5'>
-            <MaterialTable
-                data={theatreList}
-                title='Theatres List'
-                columns={[
-                    {
-                        title: "Theater Name",
-                        field: "name",
-                    },
-                    {
-                        title: "Theater ID",
-                        field: "_id",
-                    },
-                    {
-                        title: "Description",
-                        field: "description",
-                    },
-                    {
-                        title: "Pin code",
-                        field: "pinCode",
-                    },
-                    {
-                        title: "City",
-                        field: "city",
-                    },
-                ]}
-                actions={[
-                    {
-                        icon: Edit,
-                        tooltip: "Edit Theater",
-                        onClick: (event, rowData) => editTheatre(rowData),
-                    },
-                     {
-                        icon: Delete,
-                        tooltip: "Delete Theater",
-                        onClick: (event, rowData) => deleteTheatre(rowData),
-                    },
-                    
-                ]}
-                options={{
-                    actionsColumnIndex: -1,
-                    sorting: true,
-                    filtering: true,
-                    exportMenu: [
-                        {
-                            label: "Export PDF",
-                            exportFunc: (cols, datas) =>
-                                ExportPdf(cols, datas, "Theater Records"),
-                            color: "black",
-                        },
-                        {
-                            label: "Export CSV",
-                            exportFunc: (cols, datas) =>
-                                ExportCsv(cols, datas, "Theater Records"),
-                            color: "black",
-                        },
-                    ],
+        <div className='m-3' style={{zIndex:'-1'}}>
+        <MaterialTable
+        data={theatreList}
+        title='Theatres List'
+        columns={[
+            {
+                title: "Theater Name",
+                field: "name",
+            },
+            {
+                title: "Theater ID",
+                field: "_id",
+            },
+            {
+                title: "Description",
+                field: "description",
+            },
+            {
+                title: "Pin code",
+                field: "pinCode",
+            },
+            {
+                title: "City",
+                field: "city",
+            },
+        ]}
+        actions={[
+            {
+                icon: Edit,
+                tooltip: "Edit Theater",
+                onClick: (event, rowData) => editTheatre(rowData),
+            },
+              {
+                icon: Delete,
+                tooltip: "Delete Theater",
+                onClick: (event, rowData) => deleteTheatre(rowData),
+            },
+            
+        ]}
+        options={{
+            actionsColumnIndex: -1,
+            sorting: true,
+            filtering: true,
+            exportMenu: [
+                {
+                    label: "Export PDF",
+                    exportFunc: (cols, datas) =>
+                        ExportPdf(cols, datas, "Theater Records"),
+                },
+                {
+                    label: "Export CSV",
+                    exportFunc: (cols, datas) =>
+                        ExportCsv(cols, datas, "Theater Records"),
+                },
+            ],
 
-                    headerStyle: {
-                        backgroundColor: "grey",
-                        color: "yellow",
-                    },
-                    rowStyle: {
-                        backgroundColor: "#EEE",
-                    },
-                }}
-            />
+            headerStyle: {
+                backgroundColor: "#202429",
+                color: "#fff",
+            },
+            rowStyle: {
+                backgroundColor: "#EEE",
+            },
+        }}
+    />
+
             {showEditModal && (
                 <TheatreEditModal
                     selectedTheatre={selectedTheatre}

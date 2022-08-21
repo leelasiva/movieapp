@@ -26,7 +26,7 @@ const Signup = (props) => {
 
       <div className='d-flex justify-content-center align-items-center  app'>
       <div className='overlayer'></div>
-          <div className=' p-2'>
+          <div className=' p-1'>
               <h1 className='p-3 signup'>Register</h1>
               <div className='container mb-5'>
               <form onSubmit={handleSignupSubmit}>

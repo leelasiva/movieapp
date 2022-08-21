@@ -1,0 +1,34 @@
+.select-main{
+    background: url('../../assets/img\ \(1\).jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:white;
+    object-fit: cover;
+    
+}
+.movie-tag{
+    background-color: brown;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.releaseStatus{
+    background-color: green;
+}
+
+.language{
+    background-color: blue;
+}
+.text-grey{
+    color:white;
+}
+
+.theatre-list{
+    background-color:white;
+}
+
+.theatre-item{
+    border:none;
+    text-decoration: none;
+}

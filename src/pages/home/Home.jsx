@@ -7,12 +7,12 @@ import img2 from "../../assets/2.avif";
 import img3 from "../../assets/3.avif";
 import ImageCarousel from "../../components/image-carousel/ImageCarousel";
 import Footer from "../../components/footer/Footer.jsx";
-import "./landingPage.css";
+import "./home.css";
 import { getAllMovies } from "../../api/movies";
 import Loader from "../../components/loader/Loader.jsx";
 import { useNavigate } from "react-router-dom";
 
-const LandingPage = () => {
+const Home = () => {
     const [allmovies, setAllMovies] = useState([]);
     const [movies, setMovies] = useState([]);
     const [isLoading, setLoading] = useState(false);
@@ -41,9 +41,9 @@ const LandingPage = () => {
         setMovies(filteredMovies);
     };
 
-    // const handleGotoDetailPage = movieId => {
-    //     navigate(`/movie-detail/${movieId}`);
-    // };
+     const handleGotoDetailPage = movieId => {
+         navigate(`/movie-detail/${movieId}`);
+     };
 
     return (
         <div>
@@ -62,7 +62,10 @@ const LandingPage = () => {
                     {movies.map(movie => {
                         return (
                             <div
-                                className='col-lg-3 col-md-4 col-sm-6 movie-tile bg-dark text-light'>
+                                className='col-lg-3 col-md-4 col-sm-6 movie-tile bg-dark text-light'
+                                onClick={()=>{
+                                    handleGotoDetailPage(movie._id);
+                                }}>
                                    <img
                                     src={movie.posterUrl}
                                     alt='poster'
@@ -83,4 +86,4 @@ const LandingPage = () => {
         </div>
     );
 };
-export default LandingPage;
+export default Home;

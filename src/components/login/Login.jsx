@@ -35,17 +35,17 @@ const Login = (props) => {
                     
                     <form onSubmit={handleSubmit}>
                         <div className='input-group'>
-                            <input className='form-control mb-3'
+                            <input className='form-control mb-3 '
                                 type='text' value={userId} placeholder='Enter userId' onChange={(e) => setUserId(e.target.value)}></input>
                         </div>
                         <div className='input-group m-1'>
                             <input className='form-control mb-3'
                                 type='password' value={password} placeholder='Enter Password' onChange={(e) => setPassword(e.target.value)} />
                         </div>
-                        <div className='input-group m-1'>
+                      { /* <div className='input-group m-1'>
                         <input className='form-control mb-3'
                             type='password' value={confirmpassword} placeholder='Confirm Password' onChange={(e) => setConfirmPassword(e.target.value)} />
-                    </div>
+                          </div>*/}
                         <div className='input-group m-1'>
                             <input
                                 type='submit'

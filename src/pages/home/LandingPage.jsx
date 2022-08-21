@@ -1,14 +1,14 @@
 import React from 'react'
-import './home.css';
+import './landingpage.css';
 import { useNavigate } from 'react-router-dom';
 
 
-const Home = () => {
+const LandingPage = () => {
 
 const navigate = useNavigate();
 
-const goToLoginPage=()=>{
-  navigate("/login")
+const goToLandingPage=()=>{
+  navigate("/home")
 }
   return (
     <div className='wrapper'>
@@ -17,10 +17,10 @@ const goToLoginPage=()=>{
    <div className='content'>
    <h2 >Welcome! Fun Time is OneClick Away</h2>
    <h4> Book Your Movie Tickets From Comfort Of Your Home</h4>
-   <button onClick={goToLoginPage} className='btn btn-warning font-bolder m-2'>GO CLICK!</button>
+   <button onClick={goToLandingPage} className='btn btn-warning font-bolder m-2'>GO CLICK!</button>
    </div>
     </div>
   )
 }
 
-export default Home
+export default LandingPage;

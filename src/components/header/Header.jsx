@@ -34,7 +34,7 @@ const searchFn = (e) =>{
     <a                    
      className='display-6 text-warning py-1 remove-underline'
      
-      href="#" onClick={()=>{navigate("/")}}>BMYT</a>
+      href="#" onClick={()=>{navigate("/home")}}>BMYT</a>
     </div>
 {
   showSearch && (
