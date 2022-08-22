@@ -1,0 +1,8 @@
+.backgroundImg{
+    background: url("../../assets/reelbg.jpg");
+    background-position: center;
+    background-size: cover;
+    width:100vh important;
+    height:100vh;
+    color:white;
+}

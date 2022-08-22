@@ -10,6 +10,8 @@ import LandingPage from './pages/home/LandingPage';
 import MovieDetail from './pages/movie-detail/MovieDetail';
 import SelectTheatre from './pages/select-theatre/SelectTheatre';
 import SelectSeats from './pages/select-seats/SelectSeats';
+import RequireAuth from './components/require-auth/RequireAuth';
+import Unauthorised403 from './components/unauthorised/Unauthorised403';
 
 function App() {
 
@@ -23,12 +25,23 @@ function App() {
         <Route path='/customer' element={<Customer />} />
         <Route path='/client' element={<Client />} />
         <Route path='/admin' element={<Admin />} />
-        <Route path='/movie-detail/:movieId' element={<MovieDetail/>}/>
-        <Route path='/buy-tickets/:movieName/:movieId' element={<SelectTheatre/>}/>
+       
+        <Route path='/unauthorised' element={<Unauthorised403 />} />
         <Route
-                    path='/select-seats/:movieId/:theatreId'
-                    element={<SelectSeats />}
-                />
+            path='/movie-detail/:movieId'
+            element={<MovieDetail />}
+        />
+        <Route
+            path='/buy-tickets/:movieName/:movieId'
+            element={<SelectTheatre />}
+        />
+
+        <Route element={<RequireAuth allowedRoles={["CUSTOMER"]} />}>
+            <Route
+                path='/select-seats/:movieId/:theatreId'
+                element={<SelectSeats />}
+            />
+        </Route>
     
     </Routes>
 </div>

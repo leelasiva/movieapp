@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import './admin.css';
 
 const Admin = () => {
     const navigate = useNavigate();
@@ -13,15 +14,17 @@ const Admin = () => {
     }
 
     return (
-        <div>
-            <h1>This is Admin page</h1>
-
-            <button className='btn btn-primary' onClick={logoutFn}>
+        <div className="backgroundImg">
+            <h1>Welcome Admin : {localStorage.getItem("name")}</h1>
+            <div>
+            <button className='btn btn-primary p-2 m-2' onClick={logoutFn}>
                 Logout
             </button>
-            <button className='btn btn-warning' onClick={handleClientPage}>
+            
+            <button className='btn btn-warning p-2 m-2' onClick={handleClientPage}>
             ClientPage
         </button>
+        </div>
         </div>
     );
 };
